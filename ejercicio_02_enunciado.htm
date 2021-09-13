@@ -1,0 +1,46 @@
+<!-- 
+  Completar la función "rotarTrazar" para lograr girar sobre su respectivo centro:
+  con el botón "Girar Rectangulo 1" el primer rectangulo hacia la izquierda 45°
+  con el botón "Girar Rectangulo 2" el segundo rectangulo hacia la derecha 60°
+-->
+<div>
+  <button onclick="draw()">Trazar</button>
+  <button onclick="rotarTrazar(1)">Girar Rectangulo 1</button>
+  <button onclick="rotarTrazar(2)">Girar Rectangulo 2</button>
+</div>
+<canvas id='canvas' height=400/>
+<script type="text/javascript">
+var ctx = document.getElementById('canvas').getContext('2d');
+function deg2rad(g) {
+  return (Math.PI / 180) * g;
+}
+function rotarTrazar(n) {
+  if (n == 1) {}
+
+}
+function draw() {
+  ctx.save();
+  // first blue rect
+  ctx.fillStyle = '#0095DD';
+  ctx.fillRect(30, 30, 100, 100);
+
+  // second blue rect
+  ctx.fillRect(150, 30, 100, 100);
+}
+/*
+  ctx.rotate(deg2rad(25));
+  // grey rect
+  ctx.fillStyle = '#4D4E53';
+  ctx.fillRect(30, 30, 100, 100);
+  ctx.restore();
+  ctx.translate(200, 80);
+  ctx.rotate(deg2rad(-25)); // rotate
+  ctx.translate(-200, -80); // translate back
+
+
+  // draw grey rect
+  ctx.fillStyle = '#4D4E53';
+  ctx.fillRect(150, 30, 100, 100);
+*/
+
+</script>

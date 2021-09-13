@@ -1,0 +1,40 @@
+<div>
+  <button onclick="draw()">Trazar</button>
+</div>
+<canvas id='canvas' height=400/>
+<script type="text/javascript">
+function deg2rad(g) {
+  return (Math.PI / 180) * g;
+}
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+
+  // left rectangles, rotate from canvas origin
+  ctx.save();
+  // blue rect
+  ctx.fillStyle = '#0095DD';
+  ctx.fillRect(30, 30, 100, 100);
+  ctx.rotate(deg2rad(25));
+  // grey rect
+  ctx.fillStyle = '#4D4E53';
+  ctx.fillRect(30, 30, 100, 100);
+  ctx.restore();
+
+  // right rectangles, rotate from rectangle center
+  // draw blue rect
+  ctx.fillStyle = '#0095DD';
+  ctx.fillRect(150, 30, 100, 100);
+
+  ctx.translate(200, 80); // translate to rectangle center
+                          // x = x + 0.5 * width
+                          // y = y + 0.5 * height
+  ctx.rotate(deg2rad(-25)); // rotate
+  ctx.translate(-200, -80); // translate back
+
+
+  // draw grey rect
+  ctx.fillStyle = '#4D4E53';
+  ctx.fillRect(150, 30, 100, 100);
+}
+
+</script>
